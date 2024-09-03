@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'frontdesk.User'
 
 # Application definition
 
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'management',
     'accounting',
     'parking',
+    'rest_framework',
     
 ]
 

@@ -10,13 +10,15 @@ class Roomtype(models.Model):
 
 class Room(models.Model):
     name = models.CharField(max_length=255)
+    floor = models.ForeignKey(Floor,on_delete=models.SET_NULL,null=True)
     description = models.TextField()
+    type = models.ForeignKey(Roomtype,on_delete=models.SET_NULL,null=True)
 
 class Empoyee(models.Model):
     name = models.CharField(max_length=255)
-    number = models.IntegerField()
+    number = models.BigIntegerField()
     position = models.CharField(max_length=255)
-    address = models.TextField()
+    address = models.CharField(max_length=255)
 
 class Service(models.Model):
     name = models.CharField(max_length=255)
